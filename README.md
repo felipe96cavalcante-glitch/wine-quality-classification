@@ -13,7 +13,7 @@ A variável `quality` foi utilizada inicialmente para compreender as diferenças
 
 ## Pergunta de negócio
 
-> Quais características físico-químicas estão mais associadas aos vinhos de alta qualidade e é possível identificar padrões que diferenciem vinhos classificados como nota 6 daqueles classificados como nota 7 ou superior?
+> Quais características físico-químicas estão mais associadas aos vinhos de alta qualidade e é possível identificar padrões que diferenciem vinhos classificados como Alta Qualidade daqueles classificados como Baixa/Média Qualidade?
 
 ## Base de dados
 
@@ -46,10 +46,9 @@ A análise exploratória foi realizada com o objetivo de:
 
 - compreender a distribuição das notas;
 - identificar a concentração de amostras por nível de qualidade;
-- comparar as características físico-químicas entre diferentes notas;
+- comparar as características físico-químicas entre as classes Baixa/Média e Alta Qualidade;
 - identificar possíveis padrões associados à alta qualidade;
 - avaliar a distribuição e a variabilidade das características;
-- investigar especialmente as diferenças entre vinhos nota 6 e nota 7;
 - analisar possíveis valores extremos por meio do critério de 1,5 × IQR.
 
 A análise mostrou que as amostras estão fortemente concentradas nas notas 5 e 6.
@@ -63,19 +62,18 @@ Essa diferença entre as classes foi considerada durante a modelagem.
 
 ## Principais achados da análise exploratória
 
-A comparação entre as notas 6 e 7 mostrou diferenças relevantes em algumas características físico-químicas.
+A comparação entre as classes Baixa/Média Qualidade e Alta Qualidade mostrou diferenças relevantes em algumas características físico-químicas.
 
 Entre os principais destaques estão:
 
-- **Ácido cítrico:** média aproximadamente 46,6% maior na nota 7;
-- **Acidez volátil:** média aproximadamente 22,0% menor na nota 7;
-- **Cloretos:** média aproximadamente 11,8% menor na nota 7;
-- **Sulfatos:** média aproximadamente 9,9% maior na nota 7;
-- **Álcool:** média aproximadamente 7,7% maior na nota 7.
+- **Ácido cítrico:** média aproximadamente 57,4% maior na Alta Qualidade;
+- **Sulfatos:** média aproximadamente 15,9% maior na Alta Qualidade;
+- **Álcool:** média aproximadamente 12,3% maior na Alta Qualidade;
+- **Cloretos:** média aproximadamente 16,0% menor na Alta Qualidade;
+- **SO₂ total:** média aproximadamente 22,6% menor na Alta Qualidade;
+- **Acidez volátil:** média aproximadamente 28,6% menor na Alta Qualidade.
 
-A análise de correlação também indicou associações relevantes entre `quality` e características como álcool, sulfatos, ácido cítrico e acidez volátil.
-
-Essas relações representam associações observadas nos dados e não devem ser interpretadas como relações de causalidade.
+Essas relações representam padrões observados nos dados e não devem ser interpretadas como relações de causalidade.
 
 ## Machine Learning
 
